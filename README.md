@@ -51,3 +51,11 @@ Use **+ New case** to start, **Diagnostic Options** for handoff/bundle/trace, an
 Run `VALIDATE_OFFLINE_OPTIONAL.bat` for 190 core/encryption/development-fix tests. Run `.venv\Scripts\python.exe -m unittest -v hardening_tests` for 10 additional tests. The combined 200 tests and expanded UI checks cover the targeted fixes; they are not general-production approval.
 
 Version-specific older release notes, upgrade instructions, test plans and the v1.0 specification are historical references. Their database-copy, platform and validation statements are not instructions for this SQLCipher edition. `requirements.txt` is an installer input; `fixtures/*.txt` are exact synthetic test inputs.
+
+## License
+
+Copyright (c) 2026 elioli983.
+
+TechMedic is licensed under the **GNU General Public License, version 3 only (GPL-3.0-only)**. See [LICENSE](LICENSE) for the full terms. TechMedic is provided without warranty, as described in the license. Third-party dependencies retain their respective licenses.
+
+This remains a **development/evaluation release**; that maturity label does not add restrictions to the permissions granted by GPL v3.
