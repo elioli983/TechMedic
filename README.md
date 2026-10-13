@@ -46,6 +46,8 @@ Use **+ New case** to start, **Diagnostic Options** for handoff/bundle/trace, an
 
 ## Documentation and checks
 
+- [v1.5.6 SQLCipher baseline technical specification](docs/TechMedic_v1.5.6-SQLCipher_Baseline_Technical_Specification.pdf): current architecture, diagnostic workflow, storage, setup, and validation baseline.
+
 - [USER_MANUAL.md](USER_MANUAL.md): installation, operation, recovery and exports.
 - [SQLCIPHER_STORAGE.md](SQLCIPHER_STORAGE.md): key locations, backup requirements and protection boundaries.
 - [SQLCIPHER_VALIDATION.md](SQLCIPHER_VALIDATION.md): actual test evidence, performance and outstanding findings.
