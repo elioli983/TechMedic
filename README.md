@@ -1,6 +1,10 @@
 # TechMedic v1.5.6 - SQLCipher edition
 
-Windows-only development/evaluation release. Documentation reviewed October 12, 2026. Database encryption works in the tested offline scenarios; the four targeted reliability/transport/startup/performance fixes are implemented; other security limitations remain. See [SQLCIPHER_VALIDATION.md](SQLCIPHER_VALIDATION.md). This is not unrestricted production approval.
+TechMedic uses Jev and OpenAI models (the technology behind ChatGPT) to help diagnose technical issues and recommend solutions for computers, mobile phones, smart devices, televisions, and other electronics. It guides users through gathering information, narrowing down possible causes, selecting troubleshooting steps, and checking whether a solution worked.
+
+The application runs on **Windows**; the devices being diagnosed can be of many types. Live diagnosis requires your own OpenAI and Jev API keys, entered in `.env`.
+
+**Development/evaluation release — not production-ready.** Windows-only application. Documentation reviewed October 12, 2026. Database encryption works in the tested offline scenarios; the four targeted reliability/transport/startup/performance fixes are implemented; other security limitations remain. See [SQLCIPHER_VALIDATION.md](SQLCIPHER_VALIDATION.md). This is not unrestricted production approval.
 
 ## Windows setup
 
