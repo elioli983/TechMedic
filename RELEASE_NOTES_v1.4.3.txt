@@ -1,0 +1,64 @@
+HISTORICAL REFERENCE - reviewed October 12, 2026.
+This file describes the older version named below, not v1.5.6 SQLCipher.
+Do not follow its database-copy/migration instructions for this edition.
+Old paths, test counts, platform claims and examples are historical only.
+Use README.md, USER_MANUAL.md and SQLCIPHER_VALIDATION.md for current guidance.
+Exports may contain credentials supplied in case text.
+
+TechMedic v1.4.3 Release Notes
+==============================
+
+Purpose
+-------
+v1.4.3 is a focused lifecycle/action-separation release produced after the
+TV flashlight/backlight regression test. It does not add major product
+features.
+
+Problem identified
+------------------
+In v1.4.2, Jev correctly selected the workflow action `escalate` after a
+flashlight test strongly supported an internal television backlight/illumination
+path failure. However, TechMedic also changed the case lifecycle status to
+`Escalate`. That violated the five-state architecture because Escalate is an
+action, not a diagnostic lifecycle milestone.
+
+Correct behavior
+----------------
+Lifecycle and workflow action are independent:
+
+  Status: Diagnosis Established
+  TechMedic next action: Escalate
+
+The five lifecycle states remain:
+
+  Investigating
+  Possible Diagnosis
+  Diagnosis Established
+  Remediation Identified
+  Resolution Verified
+
+Changes
+-------
+- Removed `escalate` from the allowed new diagnostic-state statuses.
+- Removed deterministic status promotion to `escalate` when Jev chooses the
+  Escalate action.
+- Kept Jev `escalate` unchanged as a next-action choice.
+- Updated LLM #1 and LLM #2 prompts so escalation is represented only as a
+  workflow action while the diagnostic lifecycle remains in one of five states.
+- Kept a clearly marked legacy UI label for v1.4.2 database records that
+  already contain status=`escalate`. New turns do not create that status.
+- Added regression tests for the TV flashlight/backlight scenario.
+- Added regression coverage showing that an escalated/service case can later
+  become Resolution Verified after post-repair evidence is supplied.
+
+Validation
+----------
+- 58 offline unit tests pass.
+- Python compileall completes successfully.
+- ZIP integrity is checked before release.
+
+Compatibility
+-------------
+- SQLite schema is unchanged.
+- Existing v1.4.2, v1.4.1, v1.4, and v1.3 databases remain usable.
+- Existing .env configuration remains usable.

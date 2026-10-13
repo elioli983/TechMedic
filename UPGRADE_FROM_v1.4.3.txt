@@ -1,0 +1,41 @@
+HISTORICAL REFERENCE - reviewed October 12, 2026.
+This file describes the older version named below, not v1.5.6 SQLCipher.
+Do not follow its database-copy/migration instructions for this edition.
+Old paths, test counts, platform claims and examples are historical only.
+Use README.md, USER_MANUAL.md and SQLCIPHER_VALIDATION.md for current guidance.
+Exports may contain credentials supplied in case text.
+
+Upgrading TechMedic v1.4.3 to v1.5
+==================================
+
+1. Extract TechMedic_v1.5.zip into a new folder.
+
+2. Copy your existing v1.4.3 .env file:
+
+   TechMedic_v1.4.3\.env
+      -> TechMedic_v1.5\.env
+
+3. To preserve case history, copy:
+
+   TechMedic_v1.4.3\data\techmedic.db
+      -> TechMedic_v1.5\data\techmedic.db
+
+   On first startup, v1.5 automatically adds a research_json column to the
+   existing turns table. Existing cases are preserved.
+
+4. Run setup_windows.bat. v1.5 uses --upgrade when installing requirements so
+   the OpenAI Python SDK supports current Responses API web-search features.
+
+5. Optional .env controls:
+
+   TECHMEDIC_WEB_RESEARCH_ENABLED=true
+   TECHMEDIC_WEB_RESEARCH_MAX_SOURCES=10
+
+   No additional web-search API key is required. Controlled research uses the
+   existing OPENAI_API_KEY.
+
+6. Start TechMedic with run_techmedic.bat.
+
+The sidebar contains a per-session Controlled web research toggle. Research
+runs only when LLM #1 explicitly identifies a current documentation question
+that is material to diagnosis/remediation.

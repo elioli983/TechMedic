@@ -1,0 +1,18 @@
+HISTORICAL REFERENCE - reviewed October 12, 2026.
+This file describes the older version named below, not v1.5.6 SQLCipher.
+Do not follow its database-copy/migration instructions for this edition.
+Old paths, test counts, platform claims and examples are historical only.
+Use README.md, USER_MANUAL.md and SQLCIPHER_VALIDATION.md for current guidance.
+Exports may contain credentials supplied in case text.
+
+Upgrading TechMedic v1.5 to v1.5.1
+
+1. Extract TechMedic_v1.5.1.zip into a new folder.
+2. Copy your existing .env file from the v1.5 folder into the v1.5.1 folder.
+3. If you want to preserve existing cases, copy data\techmedic.db from v1.5
+   into the v1.5.1 data folder before starting the new version.
+4. Run setup_windows.bat if needed, then run run_techmedic.bat.
+5. Open any case with at least one completed turn and click
+   "Download diagnostic bundle" to export everything needed for review in one ZIP.
+
+The export bundle never includes the project's .env file or API keys.

@@ -1,0 +1,9 @@
+streamlit>=1.56.0
+openai>=2.0.0
+requests>=2.32.0
+python-dotenv>=1.0.1
+
+cryptography>=45.0.0
+
+# Windows wheels; no fallback to standard SQLite.
+sqlcipher3-wheels==0.5.7

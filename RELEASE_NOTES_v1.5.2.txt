@@ -1,0 +1,59 @@
+HISTORICAL REFERENCE - reviewed October 12, 2026.
+This file describes the older version named below, not v1.5.6 SQLCipher.
+Do not follow its database-copy/migration instructions for this edition.
+Old paths, test counts, platform claims and examples are historical only.
+Use README.md, USER_MANUAL.md and SQLCIPHER_VALIDATION.md for current guidance.
+Exports may contain credentials supplied in case text.
+
+TechMedic v1.5.2 — Maintenance Release
+=====================================
+
+Built from the complete v1.5.1 source package (not from scratch).
+
+Corrections:
+1. Controlled-research provenance:
+   - Citations receive source identifiers before uncited web-search hits.
+   - Markdown links cited in the research brief are captured even when the SDK
+     does not include url_citation annotations.
+   - Tracking parameters are normalized for matching while functional URL
+     parameters are preserved.
+   - Primary documentation is prioritized among extra discovery results.
+   - Titles include document/path context instead of generic "github.com".
+   - Every recorded research citation points to a numbered source. Cited
+     sources may exceed the configured search-source soft cap to avoid
+     breaking attribution.
+   - Invalid integration source IDs are removed and logged in telemetry.
+   - Research instructions require direct primary evidence for exact package,
+     download, firmware, and installer assertions; unsupported claims must be
+     marked unverified. This is a request to the research model, not a
+     machine-verified guarantee of factual correctness.
+
+2. Remediation-lifecycle calibration:
+   - Adds remediation.selection_ready and remediation.blocking_requirements.
+   - Prevents remediation_identified when essential prerequisites remain.
+   - Preserves diagnosis_established while version/compatibility verification
+     remains unfinished, even if Jev's generic remediation probability is high.
+   - Preserves Jev's raw action; guarded effective action requests required
+     information or compatibility verification when a repair isn't ready.
+   - Includes a conservative fallback for obvious unresolved preconditions in
+     older v1.5.1 case states.
+
+3. Case metadata:
+   - Saves nonempty device/model/manufacturer/OS from diagnostic state into
+     the case record without overwriting previously known/user-entered values.
+
+4. Export/UI versions: updated to v1.5.2; export structure retained.
+
+Compatibility:
+- SQLite data schema is unchanged; existing saved cases can be copied over.
+- Existing 5-state lifecycle and safety layer are retained.
+- Existing .env variable names and Jev endpoint support are unchanged.
+- No added dependencies or API credentials.
+- Offline unit tests include original 73 baseline tests plus v1.5.2 tests.
+
+Validation limitations:
+- Regression tests mock live model and web APIs. User-side end-to-end tests
+  are still needed to verify real research selection, provenance quality,
+  actual compatibility reasoning, and network/TV cases.
+- A linked official source does not by itself mean an external claim is true:
+  reviewers should still check that the page explicitly supports the claim.

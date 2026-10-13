@@ -1,0 +1,28 @@
+HISTORICAL REFERENCE - reviewed October 12, 2026.
+This file describes the older version named below, not v1.5.6 SQLCipher.
+Do not follow its database-copy/migration instructions for this edition.
+Old paths, test counts, platform claims and examples are historical only.
+Use README.md, USER_MANUAL.md and SQLCIPHER_VALIDATION.md for current guidance.
+Exports may contain credentials supplied in case text.
+
+TechMedic v1.5.3 — Diagnostic-State Integrity Maintenance Release
+
+Based on v1.5.2, preserving the five-state lifecycle, Jev, safety screen,
+SQLite case history, controlled research, source-ID provenance and ZIP export.
+
+FIXED
+1. Strictly validate RAW research-integration JSON before normalization.
+   Missing required keys, invalid shapes, or destructive evidence loss are rejected.
+2. Preserve observations, tests, symptoms, diagnosis basis, local device identity,
+   and local resolution-verification evidence across successful integration.
+3. Fail closed on malformed/exceptional research integration: use the pre-research
+   state, do not approve documentation-based repairs from unvalidated output.
+4. Record research integration success/failure, fallback usage, validation errors,
+   raw-candidate SHA-256 and preserved evidence counts in telemetry and ZIP.
+5. Refresh metadata fields that previously contained placeholders such as Unknown,
+   while preserving existing known metadata.
+6. Distinguish searched sources from integrated/validated evidence in the UI.
+
+Verification: offline test suite and regression fixture derived from the actual
+v1.5.2 three-turn PyTorch/GTX 1080 diagnostic bundle. LIVE OpenAI/Jev testing
+is still required; no live connectivity test is claimed.

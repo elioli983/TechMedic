@@ -1,0 +1,17 @@
+HISTORICAL REFERENCE - reviewed October 12, 2026.
+This file describes the older version named below, not v1.5.6 SQLCipher.
+Do not follow its database-copy/migration instructions for this edition.
+Old paths, test counts, platform claims and examples are historical only.
+Use README.md, USER_MANUAL.md and SQLCIPHER_VALIDATION.md for current guidance.
+Exports may contain credentials supplied in case text.
+
+Upgrade TechMedic v1.5.3 → v1.5.4
+
+1. Close old Streamlit / Python processes before launching v1.5.4.
+2. Extract TechMedic_v1.5.4.zip into a NEW folder.
+3. Copy your .env file to the new application folder. Do not upload it or include it in a diagnostic bundle.
+4. Optionally, back up and copy the old data/techmedic.db SQLite database (with old app stopped) to preserve cases. The application will not retroactively correct previous conclusions or evidence lost in earlier releases.
+5. Use setup_windows.bat if packages are not installed, then run_techmedic.bat.
+6. Verify both the Streamlit header and the bundle MANIFEST.json report v1.5.4.
+
+For clean regression comparisons, create a NEW case. See TEST_PLAN_v1.5.4.md.

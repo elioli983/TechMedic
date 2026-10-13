@@ -1,0 +1,35 @@
+HISTORICAL REFERENCE - reviewed October 12, 2026.
+This file describes the older version named below, not v1.5.6 SQLCipher.
+Do not follow its database-copy/migration instructions for this edition.
+Old paths, test counts, platform claims and examples are historical only.
+Use README.md, USER_MANUAL.md and SQLCIPHER_VALIDATION.md for current guidance.
+Exports may contain credentials supplied in case text.
+
+TechMedic v1.5.4 — Research / Decision Consistency
+Release date: October 2026
+
+FOCUS
+Improve reliability across controlled research → diagnostic state → Jev decision → user instructions. Keeps v1.5.3 evidence integrity and existing lifecycle states.
+
+IMPROVEMENTS
+1. Small research_delta_v1 output: only documentation evidence, remediation proposal, and research request can be updated by research integration. Local observations/tests/diagnosis/verification cannot be overwritten.
+2. Strict source IDs and readiness checks; bounded one-retry repair for invalid integration responses; original diagnostic evidence used on failure.
+3. Sanitized truncated rejected-candidate previews + validation errors, SHA-256 and attempt counts in the diagnostic bundle.
+4. Lifecycle milestone remains monotonic; current remediation readiness is separately exposed in Streamlit, Jev telemetry, and exported report.
+5. Guard blocked repair actions even if prior lifecycle was Remediation Identified.
+6. Sanity checks for PyTorch pip installation commands to prevent same-version CPU-only 'already satisfied' no-op; track exact command and post-install verification when selection is ready.
+7. Response/action consistency checks with one optional correction pass and safe bounded fallback.
+
+LIMITATIONS
+- Documentation quality and GPU runtime compatibility still require review/real execution.
+- Shell-command checks are narrow heuristics, not a secure interpreter or package authenticity verifier.
+- A local successful GPU tensor test is needed to establish resolution.
+- Online end-to-end testing has not been run for this build.
+
+RUN TESTS
+python -m unittest discover -s tests -v
+
+START
+run_techmedic.bat
+
+See TEST_PLAN_v1.5.4.md for the next controlled scenario.

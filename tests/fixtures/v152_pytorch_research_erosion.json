@@ -1,0 +1,152 @@
+{
+  "source_description": "Sanitized diagnostic_state values extracted from user-provided v1.5.2 Test 3 bundle; no case identifier or free-form user messages",
+  "before_research": {
+    "case_summary": "PyTorch reports CUDA unavailable on a Windows 11 computer with an NVIDIA GTX 1080. The installed PyTorch build is CPU-only, which explains the reported symptom.",
+    "device": {
+      "type": "Computer with GPU compute environment",
+      "manufacturer": "NVIDIA",
+      "model": "GTX 1080",
+      "operating_system": "Windows 11",
+      "application": "PyTorch"
+    },
+    "symptoms": [
+      "torch.cuda.is_available() returns False."
+    ],
+    "observations": [
+      "The reported GPU is an NVIDIA GTX 1080.",
+      "The operating system is Windows 11.",
+      "The diagnostic ran in the affected Python environment.",
+      "The reported PyTorch version is 2.14.0+cpu.",
+      "torch.version.cuda is None and torch.version.hip is None.",
+      "PyTorch reports zero CUDA devices.",
+      "No NVIDIA driver changes or PyTorch reinstallation have been made."
+    ],
+    "tests_performed": [
+      {
+        "result": "torch: 2.14.0+cpu; CUDA build: None; HIP build: None; CUDA available: False; device count: 0; first device: none.",
+        "test": "PyTorch GPU runtime details in the affected environment"
+      }
+    ],
+    "hypotheses": [
+      {
+        "name": "The installed PyTorch build is CPU-only",
+        "rationale": "The +cpu version suffix and torch.version.cuda being None directly identify a build without NVIDIA CUDA support, explaining why PyTorch cannot use CUDA."
+      },
+      {
+        "name": "NVIDIA driver or GPU visibility may also need checking",
+        "rationale": "The CPU-only build explains the PyTorch symptom, but the NVIDIA driver and GPU have not yet been checked independently."
+      }
+    ],
+    "missing_information": [
+      "Python version",
+      "How PyTorch was installed and whether the environment is virtualized, containerized, or remote",
+      "Whether nvidia-smi recognizes the GTX 1080 and the installed driver version"
+    ],
+    "candidate_next_tests": [
+      {
+        "risk": "low",
+        "instructions": "In the same affected environment, run `python --version` and `python -m pip show torch`. Report the output and whether this is a virtual environment, container, or remote environment.",
+        "name": "Identify Python version and installation environment",
+        "purpose": "Identify compatibility and installation details needed to select an appropriate CUDA-enabled PyTorch package."
+      },
+      {
+        "risk": "low",
+        "instructions": "Run `nvidia-smi` in a terminal on the same Windows machine and share its output or exact error.",
+        "name": "Check NVIDIA driver visibility",
+        "purpose": "Determine whether the NVIDIA driver recognizes the GTX 1080 independently of PyTorch."
+      }
+    ],
+    "diagnosis": {
+      "summary": "The affected environment has a CPU-only PyTorch installation, so this PyTorch build cannot use the GTX 1080 through CUDA.",
+      "basis": [
+        "The installed version is reported as torch 2.14.0+cpu.",
+        "torch.version.cuda is None, indicating that this installation has no CUDA build.",
+        "The same diagnostic reports CUDA unavailable and zero CUDA devices."
+      ]
+    },
+    "remediation": {
+      "summary": "Use a CUDA-enabled PyTorch build compatible with the Python version and Windows environment, after confirming driver and GPU visibility.",
+      "requirements": [
+        "Determine the Python version and environment type.",
+        "Check whether nvidia-smi recognizes the GTX 1080 and identify the installed driver version.",
+        "Confirm the appropriate PyTorch build and supported driver requirements for the identified versions before installation."
+      ],
+      "selection_ready": false,
+      "blocking_requirements": [
+        "Python version and installation environment are unknown.",
+        "NVIDIA driver visibility and version have not been checked.",
+        "The compatible CUDA-enabled PyTorch package has not been established."
+      ]
+    },
+    "resolution_verification": {
+      "verified": false,
+      "evidence": []
+    },
+    "lifecycle_control": {
+      "reopen": false,
+      "reason": ""
+    },
+    "research_request": {
+      "needed": false,
+      "category": "compatibility",
+      "query": "",
+      "reason": "Collect the Python version and NVIDIA driver details first; exact version information is needed for focused compatibility research."
+    },
+    "research_evidence": {
+      "summary": "",
+      "source_ids": [],
+      "category": "",
+      "query": ""
+    },
+    "possible_resolution": "Replace the CPU-only PyTorch build with a compatible CUDA-enabled build after confirming Python and NVIDIA driver details.",
+    "status": "diagnosis_established"
+  },
+  "broken_v152_integration": {
+    "case_summary": "Technical problem under investigation",
+    "device": {
+      "type": "",
+      "manufacturer": "",
+      "model": "",
+      "operating_system": "",
+      "application": ""
+    },
+    "symptoms": [],
+    "observations": [],
+    "tests_performed": [],
+    "hypotheses": [],
+    "missing_information": [],
+    "candidate_next_tests": [],
+    "diagnosis": {
+      "summary": "",
+      "basis": []
+    },
+    "remediation": {
+      "summary": "",
+      "requirements": [],
+      "selection_ready": null,
+      "blocking_requirements": []
+    },
+    "resolution_verification": {
+      "verified": false,
+      "evidence": []
+    },
+    "lifecycle_control": {
+      "reopen": false,
+      "reason": ""
+    },
+    "research_request": {
+      "needed": false,
+      "category": "",
+      "query": "",
+      "reason": ""
+    },
+    "research_evidence": {
+      "summary": "",
+      "source_ids": [],
+      "category": "",
+      "query": ""
+    },
+    "possible_resolution": "",
+    "status": "diagnosis_established"
+  }
+}

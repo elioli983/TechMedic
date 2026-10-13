@@ -1,0 +1,91 @@
+HISTORICAL REFERENCE - reviewed October 12, 2026.
+This file describes the older version named below, not v1.5.6 SQLCipher.
+Do not follow its database-copy/migration instructions for this edition.
+Old paths, test counts, platform claims and examples are historical only.
+Use README.md, USER_MANUAL.md and SQLCIPHER_VALIDATION.md for current guidance.
+Exports may contain credentials supplied in case text.
+
+TechMedic v1.5 Release Notes
+============================
+
+Purpose
+-------
+v1.5 adds controlled, current web/documentation research after the v1.4.x
+five-state lifecycle was validated with Network/DNS and television display
+regression cases.
+
+Major additions
+---------------
+1. Analyst-gated controlled web research
+   - LLM #1 can request one focused current-information lookup only when the
+     next diagnostic/remediation decision materially depends on current or
+     model/version-specific documentation.
+   - Ordinary local troubleshooting remains search-free.
+   - If exact identifiers are missing, the analyst is instructed to collect
+     them before research instead of issuing a vague search.
+
+2. OpenAI Responses API web-search stage
+   - Uses the existing OPENAI_API_KEY.
+   - Uses the Responses API web_search tool with tool_choice="required" once
+     the research gate is opened.
+   - Requests complete web-search source metadata for auditability.
+
+3. Primary-source research policy
+   - Prefer official vendor/manufacturer/project documentation, compatibility
+     matrices, release notes, firmware pages, and support articles.
+   - Secondary sources are allowed only when primary evidence is unavailable
+     or needed to locate primary documentation.
+
+4. Research integration
+   - A dedicated integration LLM pass updates diagnostic/remediation state
+     using the retrieved documentation.
+   - Documentation is explicitly treated as external evidence rather than
+     proof of the user's local configuration.
+
+5. Clickable source citations
+   - Research sources receive IDs such as R1, R2, etc.
+   - LLM #2 is instructed to cite web-grounded claims with those IDs.
+   - TechMedic converts source markers to clickable Markdown links and appends
+     a Sources consulted section.
+
+6. Research controls and audit trail
+   - Sidebar toggle enables/disables controlled web research per session.
+   - .env defaults are supported through TECHMEDIC_WEB_RESEARCH_ENABLED and
+     TECHMEDIC_WEB_RESEARCH_MAX_SOURCES.
+   - Developer Trace adds a Controlled research tab with the query, brief,
+     source metadata, error/skipped reason, and timing.
+
+7. SQLite migration
+   - Existing v1.4.x databases are upgraded in place with a research_json
+     column on the turns table.
+   - Existing case/turn data is preserved.
+
+8. Timing
+   - Research response time and research-integration LLM time are recorded.
+   - Total AI processing includes those stages on research turns.
+
+Retained behavior
+-----------------
+- Five-state lifecycle only:
+  Investigating -> Possible Diagnosis -> Diagnosis Established ->
+  Remediation Identified -> Resolution Verified
+- Escalate remains a workflow action, never a lifecycle state.
+- Diagnosis is established at a useful troubleshooting level and does not
+  require the deepest possible underlying mechanism.
+- Resolution Verified forces Finish diagnosis.
+- Raw Jev results remain auditable.
+- Deterministic safety screening remains independent of the LLM.
+
+Recommended first v1.5 validation
+---------------------------------
+Use the PyTorch/GTX 1080 compatibility case that originally motivated the
+separation between Diagnosis Established and Remediation Identified.
+
+Expected behavior:
+- establish that the installed PyTorch build is CPU-only from local evidence;
+- recognize that the correct replacement build depends on current compatibility;
+- trigger controlled documentation research only after Python/OS/GPU/version
+  identifiers are available;
+- use current authoritative documentation to verify the supported combination;
+- cite the documentation sources visibly;
+- then identify remediation and verify resolution after the user applies it.

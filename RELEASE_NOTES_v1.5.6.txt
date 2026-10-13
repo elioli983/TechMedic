@@ -1,0 +1,10 @@
+TechMedic v1.5.6 - SQLCipher / Windows DPAPI edition
+Reviewed October 12, 2026. Development/evaluation; not general-production approved.
+
+See RELEASE_NOTES_v1.5.6.md for current changes and SQLCIPHER_VALIDATION.md
+for 200 passing tests, measured performance, the four completed fixes and remaining limitations.
+
+Extract into TechMedic_v1_5_6-SQLCipher, run INSTALL_WINDOWS.bat to create
+.venv and install dependencies, then START_TECHMEDIC.bat for offline mode.
+The source ZIP does not contain .venv, .env, databases or keys.
+Existing SQLite data is not migrated.

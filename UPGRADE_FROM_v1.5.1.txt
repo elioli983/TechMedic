@@ -1,0 +1,22 @@
+HISTORICAL REFERENCE - reviewed October 12, 2026.
+This file describes the older version named below, not v1.5.6 SQLCipher.
+Do not follow its database-copy/migration instructions for this edition.
+Old paths, test counts, platform claims and examples are historical only.
+Use README.md, USER_MANUAL.md and SQLCIPHER_VALIDATION.md for current guidance.
+Exports may contain credentials supplied in case text.
+
+Upgrade TechMedic v1.5.1 -> v1.5.2
+===================================
+1. Extract TechMedic_v1.5.2.zip to a NEW folder. Do not overwrite the old version.
+2. Copy your existing .env file from the v1.5.1 folder to the new v1.5.2 folder.
+3. To retain your cases, copy data\techmedic.db to the v1.5.2 data folder.
+   Close TechMedic first. If your database is in WAL mode, stop the app cleanly
+   and make a consistent backup (include -wal/-shm if present) before copying.
+4. Run setup_windows.bat if this machine does not already have the project dependencies.
+5. Run run_techmedic.bat.
+6. Create a NEW PyTorch / GTX 1080 test case and upload the v1.5.2 diagnostic
+   bundle at the compatibility research stage. Also re-run Network and TV.
+
+This release contains an additional remediation readiness field in the saved
+structured state, but no SQLite table schema migration. The old DB is retained.
+Do not copy any real credentials into diagnostic bundle ZIPs.

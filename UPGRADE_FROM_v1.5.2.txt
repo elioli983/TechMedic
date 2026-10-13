@@ -1,0 +1,19 @@
+HISTORICAL REFERENCE - reviewed October 12, 2026.
+This file describes the older version named below, not v1.5.6 SQLCipher.
+Do not follow its database-copy/migration instructions for this edition.
+Old paths, test counts, platform claims and examples are historical only.
+Use README.md, USER_MANUAL.md and SQLCIPHER_VALIDATION.md for current guidance.
+Exports may contain credentials supplied in case text.
+
+TechMedic v1.5.2 -> v1.5.3
+
+1. Close TechMedic v1.5.2 completely (including its Streamlit console).
+2. Extract the v1.5.3 ZIP to a NEW folder. Do not merge the source folders.
+3. Copy your existing .env into the v1.5.3 root folder.
+4. Optionally copy data/techmedic.db (while v1.5.2 is shut down) to retain
+   old cases. The DB schema is unchanged. Keep a backup before copying.
+5. Run setup_windows.bat if dependencies are missing; run run_techmedic.bat.
+6. Verify the UI says TechMedic v1.5.3 and MANIFEST.json inside a newly
+   exported diagnostic bundle reports techmedic_version=1.5.3.
+7. Re-run controlled research in a fresh PyTorch test case: old research turns
+   already persisted by v1.5.2 are NOT retroactively repaired.

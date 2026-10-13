@@ -1,0 +1,21 @@
+HISTORICAL REFERENCE - reviewed October 12, 2026.
+This file describes the older version named below, not v1.5.6 SQLCipher.
+Do not follow its database-copy/migration instructions for this edition.
+Old paths, test counts, platform claims and examples are historical only.
+Use README.md, USER_MANUAL.md and SQLCIPHER_VALIDATION.md for current guidance.
+Exports may contain credentials supplied in case text.
+
+TechMedic v1.5.1 Release Notes
+
+Focus: one-click diagnostic bundle export.
+
+New:
+- Active cases with at least one completed turn show a "Download diagnostic bundle" button.
+- One ZIP captures the screen-equivalent current case output, complete conversation,
+  latest LLM structured state, raw Jev decision, controlled research trace, safety
+  result, timing telemetry, case metadata, and all raw saved turns.
+- A combined Markdown report is included so a reviewer can usually open one file first.
+- The exporter does not include .env or API keys.
+
+This is a focused usability update to v1.5; the controlled-research and v1.4.x
+lifecycle behavior are otherwise unchanged.

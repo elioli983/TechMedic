@@ -1,0 +1,65 @@
+HISTORICAL REFERENCE - reviewed October 12, 2026.
+This file describes the older version named below, not v1.5.6 SQLCipher.
+Do not follow its database-copy/migration instructions for this edition.
+Old paths, test counts, platform claims and examples are historical only.
+Use README.md, USER_MANUAL.md and SQLCIPHER_VALIDATION.md for current guidance.
+Exports may contain credentials supplied in case text.
+
+TechMedic v1.4.2 Release Notes
+==============================
+
+Purpose
+-------
+v1.4.2 is a focused diagnostic-depth calibration release produced after the
+extended v1.4.1 DNS lifecycle regression. It does not add major new product
+features.
+
+Problem identified
+------------------
+The v1.4.1 state machine correctly prevented lifecycle regression, but both
+LLM #1 and Jev treated Diagnosis Established too much like "deepest root cause
+fully known." In the regression case, multiple devices failed DNS through the
+configured resolver at 192.168.1.1 while direct queries to 8.8.8.8 succeeded,
+yet the case remained Possible Diagnosis because the deeper router/upstream
+mechanism was still unknown.
+
+v1.4.2 definition
+-----------------
+Diagnosis Established now means that direct or discriminating evidence has
+demonstrated a symptom-explaining failure at a useful troubleshooting level.
+A failing component, subsystem, configuration, service, or path can be the
+established diagnosis even when the deeper internal mechanism is not yet known.
+Diagnosis remains separate from remediation.
+
+Changes
+-------
+- Reworded Jev evidence-sufficiency and diagnosis-established questions around
+  a symptom-explaining diagnostic cause rather than the deepest root cause.
+- Reworded LLM #1 instructions to classify a demonstrated causal path as
+  Diagnosis Established and stop unnecessary root-cause excavation.
+- Added a semantic-consensus lifecycle route. The original Jev >= 0.85 route
+  remains. Consensus requires an explicit analyst Diagnosis Established (or
+  later) state, a diagnosis summary, at least two concrete basis items, and a
+  Jev diagnosis probability >= 0.30. This is not a blanket threshold reduction.
+- Remediation Identified and Resolution Verified can build on either the strong
+  Jev route or the semantic-consensus diagnosis route.
+- Changed the UI caption from "Jev: root cause established" to
+  "Jev: diagnosis established."
+- Updated Jev next-action guidance so repeated tests are not chosen merely to
+  discover a deeper mechanism after a useful diagnosis is established.
+- Retained all v1.4.1 lifecycle monotonicity, explicit reopen, terminal
+  Resolution Verified, effective-action, and Developer Trace behavior.
+
+Validation
+----------
+- Added regression tests for the exact multi-device DNS calibration pattern.
+- Added tests for Jev/LLM prompt semantics and semantic-consensus guardrails.
+- 53 offline tests pass.
+- Python compileall completes successfully.
+- ZIP integrity is checked before release.
+
+Compatibility
+-------------
+- SQLite schema is unchanged.
+- Existing v1.4.1, v1.4, and v1.3 databases remain usable.
+- Existing .env configuration remains usable.

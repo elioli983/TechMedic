@@ -1,0 +1,26 @@
+HISTORICAL REFERENCE - reviewed October 12, 2026.
+This file describes the older version named below, not v1.5.6 SQLCipher.
+Do not follow its database-copy/migration instructions for this edition.
+Old paths, test counts, platform claims and examples are historical only.
+Use README.md, USER_MANUAL.md and SQLCIPHER_VALIDATION.md for current guidance.
+Exports may contain credentials supplied in case text.
+
+TechMedic v1.5.4 -> v1.5.5 (Windows)
+
+1. CLOSE both old and new Streamlit/TechMedic instances.
+2. Make a backup of your existing v1.5.4 application folder and database.
+3. Extract TechMedic_v1.5.5.zip into a NEW folder (do not overwrite v1.5.4).
+4. Run setup_windows.bat in the new folder (creates .venv and a blank .env).
+5. Copy only your existing .env from v1.5.4, or enter API keys in the new .env.
+   Do not send .env or API keys to anyone. Keep secrets out of the test logs.
+6. Optional history migration: after stopping the old app, copy
+   data\techmedic.db into the new package's data\ folder. Keep the backup.
+   Do not copy only a live SQLite database while an app is running.
+7. Run run_offline_validation.bat. The expected suite has 146 tests.
+8. Run run_techmedic.bat, click Test Jev connection and create one small
+   synthetic case. Download a diagnostic bundle and confirm its manifest
+   reports techmedic_version: 1.5.5.
+
+Migration notes: No new SQLite schema change is introduced in v1.5.5.
+The original v1.5.4 installation should remain intact until you are satisfied.
+A passing offline suite cannot prove the live cloud services are available.

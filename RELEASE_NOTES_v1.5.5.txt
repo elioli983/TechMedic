@@ -1,0 +1,49 @@
+HISTORICAL REFERENCE - reviewed October 12, 2026.
+This file describes the older version named below, not v1.5.6 SQLCipher.
+Do not follow its database-copy/migration instructions for this edition.
+Old paths, test counts, platform claims and examples are historical only.
+Use README.md, USER_MANUAL.md and SQLCIPHER_VALIDATION.md for current guidance.
+Exports may contain credentials supplied in case text.
+
+TechMedic v1.5.5 — Focused Maintenance Release
+Release date: 2026-10-10
+
+SCOPE
+Focused reliability fixes validated in the v1.5.4 test builds. The application
+architecture, five lifecycle states, Jev next-action semantics, and research gate
+are unchanged. This is a complete standalone source/application package.
+
+CHANGES FROM ORIGINAL v1.5.4
+1. Research delta: reject malformed nested types, forbidden state modifications,
+   unverified sources and unsupported repairs; retry at most once; then preserve
+   established local evidence and refuse to authorize an unsupported repair.
+2. LLM #2: detect tested action/readiness contradictions, terminal-state
+   reopening, and certain unsafe electrical-service instructions; one correction
+   attempt followed by a conservative fallback when needed.
+3. Distinguish research not requested, retrieval failure, rejected integration,
+   and successful source-attributed research. Avoid misreporting skipped research
+   as a failed search in tested response patterns.
+4. Explicitly close SQLite connections after successful transactions and errors;
+   addresses Windows temporary-database locks seen in Python 3.14 testing.
+5. Retain provenance/attempt/telemetry tracking and 12-file diagnostic bundle.
+
+VALIDATION EVIDENCE (NOT A PRODUCTION RELIABILITY GUARANTEE)
+- v1.5.4 Phase 3 test build: 146/146 offline tests passed on Windows Python 3.14.7.
+- Phase 2: six controlled integration scenarios passed; probes used injected inputs,
+  one actual OpenAI correction call and one actual Jev call in total.
+- Phase 3 targeted live correction: accepted after one OpenAI correction call;
+  saved state and diagnostic bundle confirmed in synthetic controlled case.
+- This v1.5.5 RELEASE PACKAGE requires fresh packaging verification; older test
+  results are background evidence, not evidence the new package was already tested.
+
+OPEN ITEMS
+- Occasional user-input truncation has not been reproduced to root cause.
+- Jev confidence scores remain uncalibrated; small nonmonotonic shifts observed.
+- Stand-alone TV/professional-service handoff summaries need improvement.
+- Consistency and shell-command safeguards are bounded heuristics, not exhaustive.
+
+SAFETY AND INSTALLATION
+Extract into a NEW folder, run setup_windows.bat, supply your own .env from the
+old installation, and run_offline_validation.bat. Keep the original folder.
+Do NOT copy a database while the older app is running; back it up first.
+No API keys or user case history are included in the release archive.
